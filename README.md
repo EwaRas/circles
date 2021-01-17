@@ -4,13 +4,13 @@
 
 Clone the repo on your local machine.
 
-To install all the dependencies, from the src directory run:
+To install all the dependencies, from the main directory run:
 
 ```bash
 npm install
 ```
 
-To start the dev server, from the src directory run:
+To start the dev server, from the main directory run:
 
 ```bash
 npm run dev
