@@ -5,7 +5,7 @@ export default function IndicatorCircle({ indicators }) {
   const stateIndicators = indicators;
   const indicatorsArray = createIndicatorsArray(stateIndicators);
 
-  //svg circle variables
+  //variables to draw indicators in svg
   const radius = 70;
   const circumference = 2 * Math.PI * radius;
   const adjustedCircumference = circumference - 2;
@@ -24,7 +24,6 @@ export default function IndicatorCircle({ indicators }) {
   let rotationParameters;
   let crossMarkCoordinates;
 
-  //helper functions
   function createIndicatorsArray(stateIndicators) {
     return Object.keys(stateIndicators)
       .map((indicator) => Array(stateIndicators[indicator]).fill(indicator))
@@ -40,7 +39,8 @@ export default function IndicatorCircle({ indicators }) {
     };
     return crossMarkCoordinates;
   }
-  //comment
+
+  //setting angleOffset, rotationParameters and crossMarkCoordinates for individual indicators
   function setIndicatorParameters(segment, index) {
     if (index === 0 && segment === "lit") angleOffset;
     else angleOffset += rotationAngle;
