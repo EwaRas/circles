@@ -1,0 +1,124 @@
+:root {
+  --white: 255, 255, 255;
+  --blue: rgb(36, 109, 154);
+  --gray: rgba(61, 61, 61, 0.5);
+  --circle-wrapper-height: calc(5em + 10vw + 10vh);
+  --circle-border: calc(var(--circle-wrapper-height) * 13 / 100);
+  --circle-center-border: calc(var(--circle-wrapper-height) * 2.5 / 100);
+  --segment-icon-border: calc(var(--circle-wrapper-height) * 1.2 / 100);
+}
+
+/* CIRCLE ENTRY */
+
+.circle__wrapper {
+  height: var(--circle-wrapper-height);
+  width: var(--circle-wrapper-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0.2em 0.2em 0.75em 0.2em var(--gray);
+  border: 2px solid rgba(var(--white), 0.6);
+}
+
+.circle {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: var(--circle-border) solid rgba(var(--white), 0.4);
+}
+
+/* INDICATOR SECTION */
+.indicator__section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0.7%;
+  border-radius: 50%;
+}
+
+.cross__mark__line {
+  stroke: white;
+  stroke-width: 1px;
+  stroke-linecap: round;
+}
+
+/* CIRCLE CENTER */
+.circle__center {
+  height: 75%;
+  width: 75%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background-color: rgba(var(--white), 0.25);
+  border: 1.5px solid rgba(var(--white), 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--circle-center-border) var(--blue) inset;
+}
+.circle__center::before {
+  content: "";
+  height: 30%;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: var(--blue);
+}
+
+.circle__center__segment {
+  height: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.segment_text {
+  flex-basis: 100%;
+}
+
+.segment_icon {
+  flex-basis: 50%;
+  border: none;
+  border-top: calc(var(--segment-icon-border) * 2) solid var(--blue);
+  background-color: transparent;
+  outline: none;
+}
+
+.segment_icon > img {
+  height: 35%;
+  width: 35%;
+}
+
+.segment_icon_left {
+  border-right: var(--segment-icon-border) solid var(--blue);
+}
+
+.segment_icon_right {
+  border-left: var(--segment-icon-border) solid var(--blue);
+}
+
+.segment_icon_left > img {
+  transform: translate(15%, -25%);
+}
+.segment_icon_right > img {
+  transform: translate(-15%, -25%);
+}
+
+#text__curve {
+  fill: transparent;
+}
+
+.curved__text {
+  font-size: 1.5em;
+  fill: rgb(255, 255, 255);
+}
